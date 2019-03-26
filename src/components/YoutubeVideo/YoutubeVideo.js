@@ -1,18 +1,21 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-let url = "http://ec2-34-222-134-135.us-west-2.compute.amazonaws.com:8080/youtube";
-
 class youtubeVideo extends Component {
   state = {
     videoURL: "https://www.youtube.com/embed/TcMBFSGVi1c"
   };
 
   componentDidMount() {
-    axios.get(url).then(response => {
-      const domain = "https://www.youtube.com/embed/";
-      this.setState({ videoURL: domain + response.data.id.videoId });
-    });
+    axios
+      .post(this.props.backEndUrl + "/youtube", {
+        movie: this.props.movieInfo.movieTitle
+      })
+      .then(response => {
+        const domain = "https://www.youtube.com/embed/";
+        console.log(response);
+        this.setState({ videoURL: domain + response.data.id.videoId });
+      });
   }
 
   render() {

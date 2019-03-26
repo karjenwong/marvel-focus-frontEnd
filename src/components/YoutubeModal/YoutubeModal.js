@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import DialogActions from "@material-ui/core/DialogActions"
-import Button from "@material-ui/core/Button"
+import DialogActions from "@material-ui/core/DialogActions";
+import Button from "@material-ui/core/Button";
 import Dialog from "@material-ui/core/Dialog";
 import withMobileDialog from "@material-ui/core/withMobileDialog";
 import PropTypes from "prop-types";
@@ -22,12 +22,11 @@ class YoutubeModal extends Component {
   render() {
     const { fullScreen } = this.props;
     return (
-
       <div>
         <div>
           <img
             className="maxwidth"
-            src="https://image.tmdb.org/t/p/original/w2PMyoyLU22YvrGK3smVM9fW1jj.jpg"
+            src={this.props.movieInfo.poster}
             alt=""
             onClick={this.handleClickOpen}
           />
@@ -44,7 +43,10 @@ class YoutubeModal extends Component {
               Close
             </Button>
           </DialogActions>
-          <YoutubeVideo />
+          <YoutubeVideo
+            backEndUrl={this.props.backEndUrl}
+            movieInfo={this.props.movieInfo}
+          />
         </Dialog>
       </div>
     );

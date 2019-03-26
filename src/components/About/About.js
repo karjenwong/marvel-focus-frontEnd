@@ -12,6 +12,7 @@ class About extends Component {
           and upcoming movies.
         </p>
       </div>
+      
     );
   }
 }

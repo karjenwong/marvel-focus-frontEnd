@@ -23,7 +23,7 @@ class Search extends Component {
 
   componentDidMount() {
     axios
-      .post("http://ec2-34-222-134-135.us-west-2.compute.amazonaws.com:8080/marvel/search", {
+      .post(`${this.props.backEndUrl}/marvel/search`, {
         character: this.props.routeProps.searchQuery
       })
       .then(response => {
@@ -41,7 +41,8 @@ class Search extends Component {
                 <CharacterModal data={result} />
               </div>
             );
-          })
+          }
+          )
         ) : (
           <div>
             <p>
