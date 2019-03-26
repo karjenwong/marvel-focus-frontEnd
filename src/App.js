@@ -23,7 +23,12 @@ class App extends Component {
             exact
             path="/"
             render={props => {
-              return <Homepage backEndUrl={backEndUrl} />;
+              return (
+                <Homepage
+                  backEndUrl={backEndUrl}
+                  movieName={"Captain Marvel"}
+                />
+              );
             }}
           />
           <Route

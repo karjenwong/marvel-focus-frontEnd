@@ -11,7 +11,7 @@ class Homepage extends React.Component {
   componentDidMount() {
     axios
       .post(this.props.backEndUrl + "/movie", {
-        movie: "Avengers: Endgame"
+        movie: this.props.movieName
       })
       .then(response => this.setState({ movieInfo: response.data }));
   }
