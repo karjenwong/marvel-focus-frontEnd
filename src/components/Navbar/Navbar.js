@@ -95,7 +95,7 @@ class Navbar extends React.Component {
     var enterKey = event.keyCode || event.which;
     if(enterKey === 13) { 
       event.target.value =''
-      window.location.assign(`http://localhost:3000/search/${this.state.searchQuery}`)
+      window.location.assign(`http://ec2-18-236-99-148.us-west-2.compute.amazonaws.com:3000/search/${this.state.searchQuery}`)
     } 
   };
   handleMobileMenuOpen = event => {

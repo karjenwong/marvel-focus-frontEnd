@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Card from "@material-ui/core/Card";
 
-let marvelUrl = "http://localhost:8080/marvel";
+let marvelUrl = "http://ec2-34-222-134-135.us-west-2.compute.amazonaws.com:8080/marvel";
 
 class CharacterCard extends Component {
   state = {

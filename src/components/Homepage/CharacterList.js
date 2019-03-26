@@ -3,7 +3,7 @@ import axios from "axios";
 import CharacterCard from "./CharacterCard";
 import Paper from "@material-ui/core/Paper"
 
-let movieUrl = "http://localhost:8080/movie/character";
+let movieUrl = "http://ec2-34-222-134-135.us-west-2.compute.amazonaws.com:8080/movie/character";
 
 
 class CharacterList extends Component {

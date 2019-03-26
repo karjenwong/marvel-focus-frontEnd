@@ -23,7 +23,7 @@ class Search extends Component {
 
   componentDidMount() {
     axios
-      .post("http://localhost:8080/marvel/search", {
+      .post("http://ec2-34-222-134-135.us-west-2.compute.amazonaws.com:8080/marvel/search", {
         character: this.props.routeProps.searchQuery
       })
       .then(response => {

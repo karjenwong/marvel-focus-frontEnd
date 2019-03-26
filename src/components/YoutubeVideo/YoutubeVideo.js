@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
-let url = "http://localhost:8080/youtube";
+let url = "http://ec2-34-222-134-135.us-west-2.compute.amazonaws.com:8080/youtube";
 
 class youtubeVideo extends Component {
   state = {
