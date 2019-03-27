@@ -42,7 +42,7 @@ class Homepage extends React.Component {
               <a
                 href={
                   "https://www.cineplex.com/search-2015?search-query=" +
-                  this.state.movieTitle
+                  this.props.movieName
                 }
               >
                 Checkout Cineplex for showtimes!
