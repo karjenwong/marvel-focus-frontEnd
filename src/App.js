@@ -9,11 +9,12 @@ import Footer from "./components/Footer/Footer";
 
 class App extends Component {
   render() {
-    const backEndUrl =
+    let backEndUrl =
       "http://ec2-34-222-134-135.us-west-2.compute.amazonaws.com:8080";
-    // const backEndUrl =
-    //   "http://localhost:8080";
-
+    if (process.env.REACT_APP_local) {
+      backEndUrl = process.env.REACT_APP_local;
+    }
+    
     return (
       <div className="App">
         <Navbar />

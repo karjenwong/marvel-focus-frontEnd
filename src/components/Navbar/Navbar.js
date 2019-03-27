@@ -11,6 +11,13 @@ import SearchIcon from "@material-ui/icons/Search";
 import MoreIcon from "@material-ui/icons/MoreVert";
 import { Link } from "react-router-dom";
 
+let relative_url =
+  "http://ec2-18-236-99-148.us-west-2.compute.amazonaws.com:3000";
+if (process.env.REACT_APP_local) {
+  relative_url= "http://localhost:3000"
+}
+
+console.log(process.env.REACT_APP_local);
 const styles = theme => ({
   root: {
     width: "100%"
@@ -91,14 +98,12 @@ class Navbar extends React.Component {
   query = event => {
     this.setState({ searchQuery: event.target.value });
   };
-  test = event => {
+  changePage = event => {
     var enterKey = event.keyCode || event.which;
     if (enterKey === 13) {
       event.target.value = "";
       window.location.assign(
-        `http://localhost:3000/search/${
-          this.state.searchQuery
-        }`
+        `${relative_url}/search/${this.state.searchQuery}`
       );
     }
   };
@@ -165,7 +170,7 @@ class Navbar extends React.Component {
                   input: classes.inputInput
                 }}
                 onChange={this.query}
-                onKeyPress={this.test}
+                onKeyPress={this.changePage}
               />
             </div>
             <div className={classes.sectionMobile}>
