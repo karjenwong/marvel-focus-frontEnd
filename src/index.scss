@@ -9,20 +9,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
-
 .flex {
-  display:flex;
+  display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
 
 .portrait {
-  height:300px;
+  height: 300px;
 }
 
 .maxwidth {
-  width:100%;
+  width: 100%;
 }
 
 div iframe {
@@ -37,9 +35,9 @@ div iframe {
   padding: 1rem;
 }
 
-.card__size{
-  width:17rem;
-  height:23rem;
+.card__size {
+  width: 17rem;
+  height: 23rem;
 }
 
 .links {
@@ -54,7 +52,60 @@ div iframe {
 .footer {
   justify-content: flex-end;
   align-items: center;
-  height:30px;
+  height: 30px;
   color: black;
   background-color: white;
+}
+
+.justify {
+  text-align: left;
+  margin: 1rem 0.5rem;
+}
+
+a {
+  text-decoration: none;
+  color:darkblue;
+}
+
+.backdrop {
+  display: none;
+}
+@media (min-width: 768px) {
+  .movieInfo {
+    .youtube__container{
+      width: 400px;
+    }
+    .overview {
+      width: 330px;
+    }
+    
+  }
+}
+
+
+@media (min-width: 1000px) {
+  .movieInfo {
+    .youtube__container{
+      width: 500px;
+    }
+    .overview {
+      width: 400px;
+      flex-direction:column;
+    }
+    
+  }
+  .backdrop {
+    display:inherit;
+    width:100%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .movieInfo {
+    .overview {
+      width: 50%;
+    }
+    
+  }
+  
 }

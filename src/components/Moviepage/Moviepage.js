@@ -1,5 +1,5 @@
 import React from "react";
-import CharacterList from "./CharacterList";
+import CharacterList from "../Homepage/CharacterList";
 import YoutubeModal from "../YoutubeModal/YoutubeModal";
 import axios from "axios";
 
@@ -39,14 +39,6 @@ class Homepage extends React.Component {
                 alt="movie backdrop"
                 className="backdrop"
               />
-              <a
-                href={
-                  "https://www.cineplex.com/search-2015?search-query=" +
-                  this.state.movieTitle
-                }
-              >
-                Checkout Cineplex for showtimes!
-              </a>
             </div>
           </div>
           <CharacterList

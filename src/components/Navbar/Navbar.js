@@ -13,11 +13,11 @@ import { Link } from "react-router-dom";
 
 let relative_url =
   "http://ec2-18-236-99-148.us-west-2.compute.amazonaws.com:3000";
+
 if (process.env.REACT_APP_local) {
-  relative_url= "http://localhost:3000"
+  relative_url = "http://localhost:3000";
 }
 
-console.log(process.env.REACT_APP_local);
 const styles = theme => ({
   root: {
     width: "100%"
@@ -132,6 +132,9 @@ class Navbar extends React.Component {
         <Link to="/" className={classes.links}>
           <MenuItem onClick={this.handleMobileMenuClose}>Home</MenuItem>
         </Link>
+        <Link to="/movie/Avengers Endgame" className={classes.links}>
+          <MenuItem onClick={this.handleMobileMenuClose}>Movie</MenuItem>
+        </Link>
         <Link to="/about" className={classes.links}>
           <MenuItem onClick={this.handleMobileMenuClose}>About</MenuItem>
         </Link>
@@ -154,6 +157,9 @@ class Navbar extends React.Component {
             <div className={classes.sectionDesktop}>
               <Link to="/" className={classes.links}>
                 <MenuItem>Home</MenuItem>
+              </Link>
+              <Link to="/movie/Avengers: Endgame" className={classes.links}>
+                <MenuItem onClick={this.handleMobileMenuClose}>Movie</MenuItem>
               </Link>
               <Link to="/about" className={classes.links}>
                 <MenuItem>About</MenuItem>

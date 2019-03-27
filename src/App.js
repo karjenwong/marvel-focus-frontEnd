@@ -6,6 +6,7 @@ import Search from "./components/Search/Search";
 import About from "./components/About/About";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+import Moviepage from "./components/Moviepage/Moviepage"
 
 class App extends Component {
   render() {
@@ -14,7 +15,7 @@ class App extends Component {
     if (process.env.REACT_APP_local) {
       backEndUrl = process.env.REACT_APP_local;
     }
-    
+
     return (
       <div className="App">
         <Navbar />
@@ -28,6 +29,19 @@ class App extends Component {
                 <Homepage
                   backEndUrl={backEndUrl}
                   movieName={"Captain Marvel"}
+                />
+              );
+            }}
+          />
+          <Route
+            exact
+            path="/movie/:movieName"
+            render={routeProps => {
+              console.log(routeProps.match.params.movieName)
+              return (
+                <Moviepage
+                  backEndUrl={backEndUrl}
+                  movieName={routeProps.match.params.movieName}
                 />
               );
             }}

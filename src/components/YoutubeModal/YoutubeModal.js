@@ -22,15 +22,15 @@ class YoutubeModal extends Component {
   render() {
     const { fullScreen } = this.props;
     return (
-      <div>
-        <div>
+      <span>
+        <span>
           <img
             className="maxwidth"
             src={this.props.movieInfo.poster}
             alt=""
             onClick={this.handleClickOpen}
           />
-        </div>
+        </span>
         <Dialog
           fullScreen={fullScreen}
           open={this.state.open}
@@ -48,7 +48,7 @@ class YoutubeModal extends Component {
             movieInfo={this.props.movieInfo}
           />
         </Dialog>
-      </div>
+      </span>
     );
   }
 }

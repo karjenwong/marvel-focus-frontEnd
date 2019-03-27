@@ -7,7 +7,7 @@ class Footer extends Component {
   };
 
   componentDidMount() {
-    setTimeout(() => this.setState({ timeout: "none" }), 3000);
+    setTimeout(() => this.setState({ timeout: "none" }), 5000);
   }
 
   render() {
