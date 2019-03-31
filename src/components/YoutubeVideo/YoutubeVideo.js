@@ -13,7 +13,6 @@ class youtubeVideo extends Component {
       })
       .then(response => {
         const domain = "https://www.youtube.com/embed/";
-        console.log(response);
         this.setState({ videoURL: domain + response.data.id.videoId });
       });
   }
